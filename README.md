@@ -298,6 +298,16 @@ location ~ \.php$ {
      ...
  }
 ``` 
+for custom user privilege, you need to change the default php user,for that go to 
+```
+sudo nano /etc/php/8.1/fpm/pool.d/www.conf
+```
+user = myphp-user
+group = myphp-user
+
+listen.owner = myphp-user
+listen.group = myphp-user
+```
 
 
 visit: https://stackoverflow.com/questions/63731920/is-there-a-way-to-hide-funding-messages-when-running-composer-commands
